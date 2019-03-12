@@ -49,6 +49,7 @@ router.put('/:id', asyncHandler(async (req, res) => {
   const { error: invalidTodoErr } = validateTodo(todo);
   if (invalidTodoErr) return res.status(400).send(invalidTodoErr.details[0].message);
 
+  console.log('def');
   todo = await Todo.findByIdAndUpdate(req.params.id, todo);
   if (!todo) return res.status(404).send('The todo with given id was not found.');
 
