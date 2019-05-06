@@ -30,6 +30,7 @@ require('./middleware/error')(app);
 const jwtKey=  config.get('jwtKey');
 console.log(jwtKey);
 if(!jwtKey){
+  winston.error('jwtKey is not defined.');
   process.exit(1);
 }
 
