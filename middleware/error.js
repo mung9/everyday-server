@@ -1,3 +1,10 @@
-module.exports = exports = function (error, req, res, next) {
-  res.status(500).send(error);
+const winston = require('winston');
+const winstonError = require('winston-error');
+//winstonError(winston);
+
+module.exports = exports = function (app) {
+  app.use((err, req, res, next) => {
+    console.log(err);
+    res.status(500).send('Something failed');
+  });
 }

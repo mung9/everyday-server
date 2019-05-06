@@ -1,6 +1,7 @@
 const { User, validate: validateUser } = require('../models/user');
 
 describe('User test', () => {
+  
 
   it('Get User\'s jwt ', () => {
     const user = new User();
